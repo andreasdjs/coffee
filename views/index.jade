@@ -1,5 +1,21 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+doctype html
+html
+  body
+    form(action='', method='post', enctype='multipart/form-data')
+      fieldset
+        label(for='name') title
+        input#name(type='text', name='name', placeholder='Enter the name of brand')
+        br
+        label(for='name') Country
+        input#name(type='text', name='name', placeholder='orgin')
+        br
+        label(for='name') Producer
+        input#name(type='text', name='name', placeholder='orgin')
+        br
+        label(for='name') brewingMethod
+        input#name(type='text', name='name', placeholder='orgin')
+        br
+        label(for='description') About the coffe
+        textarea#description(name='description', placeholder='Enter a short description about coffe')
+        br
+        input(type='submit', value='Create Profile')
