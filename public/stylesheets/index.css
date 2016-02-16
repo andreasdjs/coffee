@@ -1,0 +1,13 @@
+@charset "UTF-8";
+/* index.jade */
+
+body {
+	background-color:red;
+	}
+
+form {
+	background:blue;
+	width:30%;
+	left:30%;
+	color:white;
+	}

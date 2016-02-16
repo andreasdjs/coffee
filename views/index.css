@@ -1,0 +1,34 @@
+@charset "UTF-8";
+/* index.jade */
+
+body {
+	background-image:url(/images/coffeebeans.jpg);
+	background-repeat:no-repeat;
+	background-size:100%;
+	background-position:0% 70%;
+	}
+
+form {
+	background-color:rgba(189,172,154,1.00);
+	width:30%;
+	margin:5% 60%;
+	color:rgba(49,29,19,1.00);
+	padding:3% 1%;
+	text-align:center;
+	box-shadow:5px 5px 10px grey;
+	border-radius:10px;
+	}
+#description {
+	width:95%;
+	
+	height:200px;
+	}
+	
+#name {
+	background:white;
+	width:95%;
+	text-align:center;
+	height:20px;
+	margin-bottom:1%;
+	font-size:.9em;
+	}
