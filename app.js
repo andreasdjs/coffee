@@ -8,6 +8,8 @@ var fs = require('fs');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var lista = require('./routes/lista');
+var sida = require('./routes/artikelsida');
 
 /* Write to file */
 
@@ -79,8 +81,8 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 app.use('/', routes);
 app.use('/users', users);
-// app.use('/artikelsida');
-// app.use('/artikellista');
+app.use('/artikelsida', sida);
+app.use('/lista', lista);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
