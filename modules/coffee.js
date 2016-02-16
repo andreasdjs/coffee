@@ -51,7 +51,7 @@ function getItemById(id) {
   });
 }
 
-function writeNewEntry() {
+function writeNewEntry(newEntryObject) {
   var fileReadStream = fs.createReadStream('coffee.json');
   var data = "";
 
@@ -76,7 +76,7 @@ function writeNewEntry() {
       });    
      */ 
 
-	fs.writeFile('newtextfile.txt', 'Hello Node!', (err) => {
+	fs.writeFile('newtextfile.txt', JSON.stringify(newEntryObject), (err) => {
 	  if (err) throw err;
 	  console.log('It\'s saved!');
 	}); 
