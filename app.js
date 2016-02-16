@@ -8,9 +8,10 @@ var fs = require('fs');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var lista = require('./routes/lista');
+var sida = require('./routes/artikelsida');
 
 /* Write to file */
-
 /*
 
 fs.writeFile('../textfile.txt', 'Hello Node!', (err) => {
@@ -19,26 +20,7 @@ fs.writeFile('../textfile.txt', 'Hello Node!', (err) => {
 }); 
 
 */
-
-/* Write to file end */
-
-/* Read from file */
-
-// txt
-/*
-var fileReadStream = fs.createReadStream('../textfile.txt');
-
-var data = "";
-
-fileReadStream.on('data', (chunk) => {
-  data += chunk;
-});
-
-fileReadStream.on('end', () => {
-    console.log(data);
-});
-*/
-// JSON
+/* End write to file */
 
 var fileReadStream = fs.createReadStream('../coffee.json');
 
@@ -49,11 +31,6 @@ fileReadStream.on('data', (chunk) => {
 });
 
 fileReadStream.on('end', () => {
-//    var obj = JSON.parse(data);
-/*    obj.employees.forEach(function(element){
-      console.log(element.chorongi.title);
-    }); */
-
     var obj = JSON.parse(data);
 
     console.log("\nRead JSON file: \n");
@@ -90,8 +67,8 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 app.use('/', routes);
 app.use('/users', users);
-// app.use('/artikelsida');
-// app.use('/artikellista');
+app.use('/artikelsida', sida);
+app.use('/lista', lista);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
