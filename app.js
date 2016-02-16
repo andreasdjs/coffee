@@ -11,10 +11,14 @@ var users = require('./routes/users');
 
 /* Write to file */
 
+/*
+
 fs.writeFile('../textfile.txt', 'Hello Node!', (err) => {
   if (err) throw err;
   console.log('It\'s saved!');
-});
+}); 
+
+*/
 
 /* Write to file end */
 
@@ -36,14 +40,12 @@ fileReadStream.on('end', () => {
 */
 // JSON
 
-var fileReadStream = fs.createReadStream('../nycklarV.json');
+var fileReadStream = fs.createReadStream('../coffee.json');
 
 var data = "";
-console.log("hello");
 
 fileReadStream.on('data', (chunk) => {
   data += chunk;
-  console.log("reading");
 });
 
 fileReadStream.on('end', () => {
@@ -51,11 +53,20 @@ fileReadStream.on('end', () => {
 /*    obj.employees.forEach(function(element){
       console.log(element.chorongi.title);
     }); */
-    console.log(data);
-//    var obj = JSON.parse(data);
-//    console.log(obj.chorongi.title);
-    console.log("Reading JSON done.");
-// console.log(jsonData);
+
+    var obj = JSON.parse(data);
+
+    console.log("\nRead JSON file: \n");
+
+    obj.coffee.forEach(function(element){
+      console.log("Id: " + element.id);
+      console.log("Roastery: " + element.roastery);
+      console.log("Title: " + element.title);
+      console.log("Producer: " + element.producer);
+      console.log("Brewing method: " + element.brewingMethod);
+      console.log("About: " + element.about);
+      console.log("\n");
+    });    
 
 });
 

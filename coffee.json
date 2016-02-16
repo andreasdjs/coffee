@@ -1,0 +1,40 @@
+{
+    "coffee": [
+	    {
+	    	"id": "1",
+	        "title": "Chorongi",
+	        "roastery" : "Slöinge",
+	        "country": "Kenya",
+	        "producer": "Chorongi",
+	        "brewingMethod": "Brygg",
+	        "about": "Ibland händer det att man springer på ett kaffe som sticker ut så där ovanligt mycket. Årets skörd av Chorongi stack ut på koppningsbordet hos Collaborative Coffee Sourse i Oslo något alldeles speciellt. En kopp som riktigt spritter till i munnen och smaken hängde kvar tills jag åkte hem på kvällen. Kenyanskt kaffe är bra, det vet de flesta, men ibland hittar man diamanter bland guldkornen. Chorongi Factory ligger i Nyeridistriktet och ägs av Mutheka Coffee Farmer's Society som består av ca 5600 kaffebönder. Ungefär 1000 av dem tillhör Chorongi och de levererar mogna bär som de handplockat från sina träd. De har i snitt 250 träd var."
+	    },
+	    {
+	    	"id": "2",
+	        "title": "Chorongi",
+	        "roastery" : "Slöinge",
+	        "country": "Kenya",
+	        "producer": "Chorongi",
+	        "brewingMethod": "Brygg",
+	        "about": "Ibland händer det att man springer på ett kaffe som sticker ut så där ovanligt mycket. Årets skörd av Chorongi stack ut på koppningsbordet hos Collaborative Coffee Sourse i Oslo något alldeles speciellt. En kopp som riktigt spritter till i munnen och smaken hängde kvar tills jag åkte hem på kvällen. Kenyanskt kaffe är bra, det vet de flesta, men ibland hittar man diamanter bland guldkornen. Chorongi Factory ligger i Nyeridistriktet och ägs av Mutheka Coffee Farmer's Society som består av ca 5600 kaffebönder. Ungefär 1000 av dem tillhör Chorongi och de levererar mogna bär som de handplockat från sina träd. De har i snitt 250 träd var."
+	    },
+	    {
+	    	"id": "3",
+	        "title": "Chorongi",
+	        "roastery" : "Slöinge",
+	        "country": "Kenya",
+	        "producer": "Chorongi",
+	        "brewingMethod": "Brygg",
+	        "about": "Ibland händer det att man springer på ett kaffe som sticker ut så där ovanligt mycket. Årets skörd av Chorongi stack ut på koppningsbordet hos Collaborative Coffee Sourse i Oslo något alldeles speciellt. En kopp som riktigt spritter till i munnen och smaken hängde kvar tills jag åkte hem på kvällen. Kenyanskt kaffe är bra, det vet de flesta, men ibland hittar man diamanter bland guldkornen. Chorongi Factory ligger i Nyeridistriktet och ägs av Mutheka Coffee Farmer's Society som består av ca 5600 kaffebönder. Ungefär 1000 av dem tillhör Chorongi och de levererar mogna bär som de handplockat från sina träd. De har i snitt 250 träd var."
+	    },
+	    {
+	    	"id": "4",
+	        "title": "Chorongi",
+	        "roastery" : "Slöinge",
+	        "country": "Kenya",
+	        "producer": "Chorongi",
+	        "brewingMethod": "Brygg",
+	        "about": "Ibland händer det att man springer på ett kaffe som sticker ut så där ovanligt mycket. Årets skörd av Chorongi stack ut på koppningsbordet hos Collaborative Coffee Sourse i Oslo något alldeles speciellt. En kopp som riktigt spritter till i munnen och smaken hängde kvar tills jag åkte hem på kvällen. Kenyanskt kaffe är bra, det vet de flesta, men ibland hittar man diamanter bland guldkornen. Chorongi Factory ligger i Nyeridistriktet och ägs av Mutheka Coffee Farmer's Society som består av ca 5600 kaffebönder. Ungefär 1000 av dem tillhör Chorongi och de levererar mogna bär som de handplockat från sina träd. De har i snitt 250 träd var."
+	    }
+    ]
+}
