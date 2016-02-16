@@ -4,9 +4,63 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var fs = require('fs');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+
+/* Write to file */
+
+fs.writeFile('../textfile.txt', 'Hello Node!', (err) => {
+  if (err) throw err;
+  console.log('It\'s saved!');
+});
+
+/* Write to file end */
+
+/* Read from file */
+
+// txt
+/*
+var fileReadStream = fs.createReadStream('../textfile.txt');
+
+var data = "";
+
+fileReadStream.on('data', (chunk) => {
+  data += chunk;
+});
+
+fileReadStream.on('end', () => {
+    console.log(data);
+});
+*/
+// JSON
+
+var fileReadStream = fs.createReadStream('../nycklarV.json');
+
+var data = "";
+console.log("hello");
+
+fileReadStream.on('data', (chunk) => {
+  data += chunk;
+  console.log("reading");
+});
+
+fileReadStream.on('end', () => {
+//    var obj = JSON.parse(data);
+/*    obj.employees.forEach(function(element){
+      console.log(element.chorongi.title);
+    }); */
+    console.log(data);
+//    var obj = JSON.parse(data);
+//    console.log(obj.chorongi.title);
+    console.log("Reading JSON done.");
+// console.log(jsonData);
+
+});
+
+
+/* End read from file */
 
 var app = express();
 
@@ -25,8 +79,8 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/artikelsida');
-app.use('/artikellista');
+// app.use('/artikelsida');
+// app.use('/artikellista');
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
