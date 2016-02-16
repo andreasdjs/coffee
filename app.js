@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 // var fs = require('fs');
 
-var readCoffee = require('./modules/readCoffee');
+var coffee = require('./modules/coffee');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -28,7 +28,8 @@ fs.writeFile('../textfile.txt', 'Hello Node!', (err) => {
 /*
 readCoffee.readCoffee();
 */
-readCoffee.getItemById(2);
+coffee.getItemById(5);
+coffee.writeNewEntry();
 /* End read from JSON-file */
 
 var app = express();
