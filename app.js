@@ -28,6 +28,7 @@ fs.writeFile('../textfile.txt', 'Hello Node!', (err) => {
 /*
 readCoffee.readCoffee();
 */
+readCoffee.getItemById(2);
 /* End read from JSON-file */
 
 var app = express();
