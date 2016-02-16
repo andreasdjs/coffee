@@ -24,8 +24,10 @@ form {
 	color:rgba(49,29,19,1.00);
 	padding:3% 1%;
 	text-align:center;
-	box-shadow:5px 5px 10px grey;
-	border-radius:10px;
+	-moz-box-shadow:6px 6px 6px rgba(0,0,0,0.2);
+	-webkit-box-shadow:6px 6px 6px rgba(0,0,0,0.2);
+	box-shadow:6px 6px 6px rgba(0,0,0,0.2);
+	border-radius:6px;
 	}
 #description {
 	width:95%;
@@ -82,6 +84,13 @@ nav ul li a {
 
 nav ul li a:hover { 
 	color: #e0e0e0;
+}
+
+/* Inherit font (from Mozilla Developer Network) */
+
+button, input, select, textarea {
+  font-family : inherit; 
+  font-size   : 100%;
 }
 
 
