@@ -1,7 +1,16 @@
 @charset "UTF-8";
 /* index.jade */
 
+html { 
+	height: 100%; 
+    min-height: 100%;
+}
+
 body {
+	font-family: "Helvetica Neue", Helvetica, Calibri, Arial, sans-serif; 
+	margin:0; /* Remove default margins */
+	height: 100%;
+
 	background-image:url(/images/coffeebeans.jpg);
 	background-repeat:no-repeat;
 	background-size:100%;
@@ -32,3 +41,48 @@ form {
 	margin-bottom:1%;
 	font-size:.9em;
 	}
+
+nav {
+	background-color:white;
+	margin:0;
+	border-bottom: 1px solid black;
+}
+
+nav ul {
+	width: 100%; 
+	margin: 0; /* reset margins */ 
+	padding: 0;
+	list-style-type: none; /* remove bullets */
+}
+
+nav ul li {
+	line-height: 60px;
+	padding-left: 0px;
+	padding-right: 0px;
+	text-align: center;
+	display: inline-block; /* horisontal position */
+}
+
+nav ul li a {
+	padding-left: 20px;
+	padding-right: 20px;
+	text-decoration: none;
+	color: black;
+}
+
+/* -- Paint it black! -- */
+
+nav { 
+	background-color: black;
+}
+
+nav ul li a {
+	color: white;
+}
+
+nav ul li a:hover { 
+	color: #e0e0e0;
+}
+
+
+
