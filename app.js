@@ -4,7 +4,9 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var fs = require('fs');
+// var fs = require('fs');
+
+var readCoffee = require('./modules/readCoffee');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -22,33 +24,11 @@ fs.writeFile('../textfile.txt', 'Hello Node!', (err) => {
 */
 /* End write to file */
 
-var fileReadStream = fs.createReadStream('coffee.json');
-
-var data = "";
-
-fileReadStream.on('data', (chunk) => {
-  data += chunk;
-});
-
-fileReadStream.on('end', () => {
-    var obj = JSON.parse(data);
-
-//    console.log("\nRead JSON file: \n");
-
-    obj.coffee.forEach(function(element){
-/*      console.log("Id: " + element.id);
-      console.log("Roastery: " + element.roastery);
-      console.log("Title: " + element.title);
-      console.log("Producer: " + element.producer);
-      console.log("Brewing method: " + element.brewingMethod);
-      console.log("About: " + element.about);
-      console.log("\n"); */
-    });    
-
-});
-
-
-/* End read from file */
+/* Read from JSON-file  */
+/*
+readCoffee.readCoffee();
+*/
+/* End read from JSON-file */
 
 var app = express();
 
