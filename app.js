@@ -13,23 +13,6 @@ var users = require('./routes/users');
 var lista = require('./routes/lista');
 var sida = require('./routes/artikelsida');
 
-/* Write to file */
-/*
-
-fs.writeFile('../textfile.txt', 'Hello Node!', (err) => {
-  if (err) throw err;
-  console.log('It\'s saved!');
-}); 
-
-*/
-/* End write to file */
-
-/* Read from JSON-file  */
-/*
-readCoffee.readCoffee();
-*/
-// coffee.getItemById(5);
-
 var newObject = {
         "id": "7",
           "title": "Espresso No.4",
@@ -42,7 +25,102 @@ var newObject = {
 
 coffee.writeNewEntry(newObject);
 
+/* passing function as a parameter */ 
+/*
+function foodemo(value){
+  return 'hello '+ value;
+}
+
+function funct(a, foo) {
+  console.log("\n foo: " + foo(a) + "\n");
+}
+
+funct('world!', foodemo); //=> 'hello world!'
+*/
+/*
+So, the second parameter of funct is a reference to another function (in this case foodemo).
+Once the function is called, it executes that other function (in this case using the first
+parameter as input for it).
+*/
+
+/* passing function as a parameter */ 
+function foodemo(value){
+  return value;
+}
+
+function funct(a, foodemoReference) {
+//  console.log(foodemoReference(a));
+  return foodemoReference(a);
+//  foodemoReference(a);
+}
+
+// funct(5, foodemo);
+console.log(funct(5, foodemo)); //=> 'hello world!'
+// console.log(funct(foodemo)); //=> 'hello world!'
+console.log(foodemo(15));
+
+/*
+function returnId(a) {
+  console.log("Return id is: " + a);
+  console.log(a);
+}
+
+coffee.getMaxId(returnId);
+*/
+/*
+var gugge = 0;
+
+function returnId(a) {
+  gugge = a;
+  console.log("a: " + a);
+  return a;
+}*/
+
+// console.log("The max id value is: " + coffee.getMaxId(returnId))
+/*
+function foo(a) {
+  return a;
+}
+
+coffee.getMaxId(foo);
+
+*/
+/*
+myfoo();
+
+function hej() {
+ console.log("hej");
+ return "Hejsan!"
+}
+
+console.log(hej());
+
+*/
+/* 
+returnFunct(idNumber, ) {
+  return idNumber;
+}
+
+function bigfunct() {
+  var idNumber = 5;
+  returnFunct(idNumber);
+}
+
+console.log(returnFunct());*/
+
+/* end passing function as a parameter */ 
+
+/*function print
+
 coffee.getMaxId();
+*/
+
+/*
+function foo(a) {
+  console.log(a);
+}
+coffee.getMaxId(foo()); */
+//console.log("Returned value: " + coffee.getMaxId(foo);
 
 /* End read from JSON-file */
 
@@ -65,6 +143,29 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/artikelsida', sida);
 app.use('/lista', lista);
+
+/* Recieve POST data */
+
+app.post('/sent', function(req, res) {
+    var name = req.body.name;
+//    var newId = coffee.getMaxId();
+console.log("Returned value: " + coffee.getMaxId());
+//    coffee.getMaxId();
+    var writeNewObject = {
+        "id": coffee.getMaxId(),
+          "title": req.body.title,
+          "roastery" : req.body.roastery,
+          "country": req.body.country,
+          "producer": req.body.producer,
+          "brewingMethod": req.body.brewingMethod,
+          "about": req.body.about
+    };
+
+    console.log(name);
+
+    console.log(writeNewObject);
+});
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

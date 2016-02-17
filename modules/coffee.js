@@ -87,7 +87,7 @@ function writeNewEntry(newEntryObject) {
   });
 }
 
-function getMaxId() {
+function getMaxId(inFunction) {
   var fileReadStream = fs.createReadStream('coffee.json');
   var data = "";
   var maxId = 0;
@@ -108,9 +108,15 @@ function getMaxId() {
   		}
 
       });
-      console.log("New id: " + maxId + "\n");    
+      console.log("New id: " + maxId + "\n"); 
+		// foo(maxId);
+		inFunction(maxId);
   });
 }
+/*
+console.log(posts.coffee[0].title);
+console.log(posts.coffee[0].require.params);
+*/
 
 module.exports.readCoffee = readCoffee;
 module.exports.getItemById = getItemById;
