@@ -13,6 +13,8 @@ var users = require('./routes/users');
 var lista = require('./routes/lista');
 var sida = require('./routes/artikelsida');
 
+/* Small coffee object */
+
 var newObject = {
         "id": "7",
           "title": "Espresso No.4",
@@ -23,9 +25,11 @@ var newObject = {
           "about": "Vår traditionella espressoblandning består av ett kaffe från Sertãozinho i Brasilien och ett från Miguel Moreno i Honduras. Den är varsamt rostad för att fortfarande behålla en tydlig karaktär av kaffe. Inga brända smaker och ingen beska. Kaffet från Brasilien står chokladkaraktären och sötman, Miguel Moreno bidrar med en karamellsötma som gifter sig fint med chokladtonen. Mycket lent avslut. Fungerar även mycket bra som vanligt bryggkaffe om man vill ett lite fylligare, mer mörkrostat kaffe."
       };
 
+/* Call function to write coffe object */
+
 coffee.writeNewEntry(newObject);
 
-/* passing function as a parameter */ 
+/* Passing function as a parameter example */ 
 /*
 function foodemo(value){
   return 'hello '+ value;
@@ -43,86 +47,29 @@ Once the function is called, it executes that other function (in this case using
 parameter as input for it).
 */
 
-/* passing function as a parameter */ 
-function foodemo(value){
-  return value;
+/* Get max id value */ 
+
+var newMax = 0;
+function setNewMaxId() {
+  coffee.getMaxId(function(i){
+    console.log("i2: " + i)
+    newMax = i + 1;
+  });
 }
 
-function funct(a, foodemoReference) {
-//  console.log(foodemoReference(a));
-  return foodemoReference(a);
-//  foodemoReference(a);
+/* Another way to get max id value */
+
+var newMaxId = 0;
+
+function returnValue(i) {
+  console.log("i: " + i);
+  newMaxId = i + 1;
 }
 
-// funct(5, foodemo);
-console.log(funct(5, foodemo)); //=> 'hello world!'
-// console.log(funct(foodemo)); //=> 'hello world!'
-console.log(foodemo(15));
+setNewMaxId();
+coffee.getMaxId(returnValue);
 
-/*
-function returnId(a) {
-  console.log("Return id is: " + a);
-  console.log(a);
-}
-
-coffee.getMaxId(returnId);
-*/
-/*
-var gugge = 0;
-
-function returnId(a) {
-  gugge = a;
-  console.log("a: " + a);
-  return a;
-}*/
-
-// console.log("The max id value is: " + coffee.getMaxId(returnId))
-/*
-function foo(a) {
-  return a;
-}
-
-coffee.getMaxId(foo);
-
-*/
-/*
-myfoo();
-
-function hej() {
- console.log("hej");
- return "Hejsan!"
-}
-
-console.log(hej());
-
-*/
-/* 
-returnFunct(idNumber, ) {
-  return idNumber;
-}
-
-function bigfunct() {
-  var idNumber = 5;
-  returnFunct(idNumber);
-}
-
-console.log(returnFunct());*/
-
-/* end passing function as a parameter */ 
-
-/*function print
-
-coffee.getMaxId();
-*/
-
-/*
-function foo(a) {
-  console.log(a);
-}
-coffee.getMaxId(foo()); */
-//console.log("Returned value: " + coffee.getMaxId(foo);
-
-/* End read from JSON-file */
+/* End get max id value */ 
 
 var app = express();
 

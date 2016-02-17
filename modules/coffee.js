@@ -87,7 +87,7 @@ function writeNewEntry(newEntryObject) {
   });
 }
 
-function getMaxId(inFunction) {
+function getMaxId(foo) {
   var fileReadStream = fs.createReadStream('coffee.json');
   var data = "";
   var maxId = 0;
@@ -110,7 +110,7 @@ function getMaxId(inFunction) {
       });
       console.log("New id: " + maxId + "\n"); 
 		// foo(maxId);
-		inFunction(maxId);
+		foo(maxId);
   });
 }
 /*
