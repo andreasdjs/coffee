@@ -28,7 +28,7 @@ fs.writeFile('../textfile.txt', 'Hello Node!', (err) => {
 /*
 readCoffee.readCoffee();
 */
-coffee.getItemById(5);
+// coffee.getItemById(5);
 
 var newObject = {
         "id": "7",
@@ -41,6 +41,9 @@ var newObject = {
       };
 
 coffee.writeNewEntry(newObject);
+
+coffee.getMaxId();
+
 /* End read from JSON-file */
 
 var app = express();
