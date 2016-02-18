@@ -28,7 +28,7 @@ var newObject = {
 
 /* Call function to write coffe object */
 
-coffee.writeNewEntry(newObject);
+coffee.initialWrite(newObject);
 
 /* Passing function as a parameter example */ 
 /*
