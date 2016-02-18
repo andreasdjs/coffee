@@ -17,6 +17,18 @@ body {
 	background-position:0% 70%;
 	}
 
+#container {
+	margin-left:24px;
+	margin-top:16px;
+}
+
+ul, li { padding: 0px; margin: 0px;}
+
+ul li {
+	list-style-type: none; /* remove bullets */
+	margin: 0px;
+}
+
 form {
 /*	background-color:rgba(189,172,154,1.00); */
 /*	width:30%; */
@@ -112,3 +124,43 @@ input:focus {
 	margin-bottom: 0px;
 }
 
+
+.myButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #71d685;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #71d685;
+	box-shadow:inset 0px 1px 0px 0px #71d685;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #71d685), color-stop(1, #59a368));
+	background:-moz-linear-gradient(top, #71d685 5%, #59a368 100%);
+	background:-webkit-linear-gradient(top, #71d685 5%, #59a368 100%);
+	background:-o-linear-gradient(top, #71d685 5%, #59a368 100%);
+	background:-ms-linear-gradient(top, #71d685 5%, #59a368 100%);
+	background:linear-gradient(to bottom, #71d685 5%, #59a368 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#71d685', endColorstr='#59a368',GradientType=0);
+	background-color:#71d685;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px; 
+	border:1px solid #5c9467;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+/*	font-size:28px; */
+	padding:16px 32px; 
+	text-decoration:none;
+	text-shadow:0px 1px 0px #387545;
+	width: 216px;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #59a368), color-stop(1, #71d685));
+	background:-moz-linear-gradient(top, #59a368 5%, #71d685 100%);
+	background:-webkit-linear-gradient(top, #59a368 5%, #71d685 100%);
+	background:-o-linear-gradient(top, #59a368 5%, #71d685 100%);
+	background:-ms-linear-gradient(top, #59a368 5%, #71d685 100%);
+	background:linear-gradient(to bottom, #59a368 5%, #71d685 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#59a368', endColorstr='#71d685',GradientType=0);
+	background-color:#59a368;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}

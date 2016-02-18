@@ -10,7 +10,7 @@ var coffee = require('./modules/coffee');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var lista = require('./routes/lista');
+var list = require('./routes/list');
 var sida = require('./routes/artikelsida');
 var add = require('./routes/add');
 
@@ -90,7 +90,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/artikelsida', sida);
-app.use('/lista', lista);
+app.use('/list', list);
 app.use('/add', add);
 
 /* Recieve POST data */
