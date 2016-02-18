@@ -5,9 +5,6 @@ block content
     div
       h1= title
       ul
-        li Chorongi
-        li Elida
-        li Yandaro
-        li El Angel
-        li Gerardo Moreno
-        li Jorge Lagos
+        each val, index in ['zero', 'one', 'two']
+          li= index + ': ' + val        
+      // ul
