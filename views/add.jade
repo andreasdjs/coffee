@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  #add
+    form(method='POST', action='http://localhost:3000/sent')
+      h1 L&Auml;GG TILL NYTT KAFFE
+      | &#x9;
+      div
+        input(type='text', name='title', placeholder='Title')
+      | &#x9;&#x9;
+      div
+        input(type='text', name='roastery', placeholder='Roastery')
+      | &#x9;&#x9;
+      div
+        input(type='text', name='country', placeholder='Country')
+      | &#x9;&#x9;
+      div
+        input(type='text', name='producer', placeholder='Producer')
+      | &#x9;&#x9;
+      div
+        input(type='text', name='brewingMethod', placeholder='Brewing Method')
+      | &#x9;&#x9;
+      div
+        input(type='text', name='about', placeholder='Description')
+      | &#x9;&#x9;
+      p
+        button L&auml;gg till nytt kaffe

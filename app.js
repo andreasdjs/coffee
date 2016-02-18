@@ -12,6 +12,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var lista = require('./routes/lista');
 var sida = require('./routes/artikelsida');
+var add = require('./routes/add');
 
 /* Small coffee object */
 
@@ -90,16 +91,17 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/artikelsida', sida);
 app.use('/lista', lista);
+app.use('/add', add);
 
 /* Recieve POST data */
 
 app.post('/sent', function(req, res) {
     var name = req.body.name;
 //    var newId = coffee.getMaxId();
-console.log("Returned value: " + coffee.getMaxId());
+// console.log("Returned value: " + coffee.getMaxId());
 //    coffee.getMaxId();
     var writeNewObject = {
-        "id": coffee.getMaxId(),
+        "id": "8",
           "title": req.body.title,
           "roastery" : req.body.roastery,
           "country": req.body.country,
@@ -107,8 +109,6 @@ console.log("Returned value: " + coffee.getMaxId());
           "brewingMethod": req.body.brewingMethod,
           "about": req.body.about
     };
-
-    console.log(name);
 
     console.log(writeNewObject);
 });

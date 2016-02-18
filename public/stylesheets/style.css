@@ -7,26 +7,27 @@ html {
 
 body {
 	font-family: "Helvetica Neue", Helvetica, Calibri, Arial, sans-serif; 
+	font-size: 18px;
 	margin:0; /* Remove default margins */
 	height: 100%;
 
-	background-image:url(/images/coffeebeans.jpg);
+/*	background-image:url(/images/coffeebeans.jpg); */
 	background-repeat:no-repeat;
 	background-size:100%;
 	background-position:0% 70%;
 	}
 
 form {
-	background-color:rgba(189,172,154,1.00);
-	width:30%;
-	margin:5% 60%;
+/*	background-color:rgba(189,172,154,1.00); */
+/*	width:30%; */
+/*	margin:5% 60%;
 	color:rgba(49,29,19,1.00);
-	padding:3% 1%;
-	text-align:center;
+	padding:3% 1%; */
+/*	text-align:center;
 	-moz-box-shadow:6px 6px 6px rgba(0,0,0,0.2);
 	-webkit-box-shadow:6px 6px 6px rgba(0,0,0,0.2);
 	box-shadow:6px 6px 6px rgba(0,0,0,0.2);
-	border-radius:6px;
+	border-radius:6px; */
 	}
 #description {
 	width:95%;
@@ -90,7 +91,24 @@ nav ul li a:hover {
 button, input, select, textarea {
   font-family : inherit; 
   font-size   : 100%;
+  padding: 12px;
 }
 
+/* add form */
 
+#add {
+	padding-left: 32px;
+}
+
+form h1 { margin-bottom: 16px;}
+
+/* selected */
+input {
+	margin-bottom: 2px;
+}
+
+input:focus { 
+	border-bottom: solid #10C010 4px;
+	margin-bottom: 0px;
+}
 

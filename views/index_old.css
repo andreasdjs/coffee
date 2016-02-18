@@ -11,7 +11,7 @@ body {
 	margin:0; /* Remove default margins */
 	height: 100%;
 
-	background-image:url(/images/coffeebeans.jpg);
+/*	background-image:url(/images/coffeebeans.jpg); */
 	background-repeat:no-repeat;
 	background-size:100%;
 	background-position:0% 70%;
