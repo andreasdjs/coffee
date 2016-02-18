@@ -64,7 +64,9 @@ function writeNewEntry(newEntryObject) {
   });
 
   fileReadStream.on('end', () => {
-      var obj = JSON.parse(data);
+
+  	// Converting from string to object
+  	var obj = JSON.parse(data);
 /*  
 	fs.writeFile('writtenCoffeeObject.txt', JSON.stringify(newEntryObject), (err) => {
 	  if (err) throw err;
@@ -77,9 +79,14 @@ function writeNewEntry(newEntryObject) {
 	  console.log('Full object saved!');
 	}); 
 */
+
+	// Pushing new object to last position in product array
 	obj.coffee.push(newEntryObject);
+
+	// Converting to text
 	var write = JSON.stringify(obj);
 
+	// Writing to disk
 	fs.writeFile('coffeeWritten.txt', write, (err) => {
 	  if (err) throw err;
 	  console.log('New coffe data file written including new object!');
@@ -103,21 +110,15 @@ function getMaxId(foo) {
       console.log("\nRetrieving max Id.\n");
 
       obj.coffee.forEach(function(element){
-//		console.log(element.id);		
   		if (parseInt(element.id) >= maxId) {
   			maxId = parseInt(element.id) + 1;
   		}
 
       });
       console.log("New id: " + maxId + "\n"); 
-		// foo(maxId);
 		foo(maxId);
   });
 }
-/*
-console.log(posts.coffee[0].title);
-console.log(posts.coffee[0].require.params);
-*/
 
 module.exports.readCoffee = readCoffee;
 module.exports.getItemById = getItemById;
