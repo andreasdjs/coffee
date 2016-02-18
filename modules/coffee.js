@@ -65,23 +65,24 @@ function writeNewEntry(newEntryObject) {
 
   fileReadStream.on('end', () => {
       var obj = JSON.parse(data);
-  
+/*  
 	fs.writeFile('writtenCoffeeObject.txt', JSON.stringify(newEntryObject), (err) => {
 	  if (err) throw err;
 	  console.log('Input object saved!');
 	}); 
-
+*/
+/*
 	fs.writeFile('writtenCoffeeFull.txt', JSON.stringify(obj), (err) => {
 	  if (err) throw err;
 	  console.log('Full object saved!');
 	}); 
-
-	obj.coffee.unshift(newEntryObject);
+*/
+	obj.coffee.push(newEntryObject);
 	var write = JSON.stringify(obj);
 
-	fs.writeFile('writtenCoffeeUnshifted.txt', write, (err) => {
+	fs.writeFile('coffeeWritten.txt', write, (err) => {
 	  if (err) throw err;
-	  console.log('Input object added to full object and saved!');
+	  console.log('New coffe data file written including new object!');
 	}); 
 
   });
