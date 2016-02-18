@@ -12,6 +12,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var list = require('./routes/list');
 var sida = require('./routes/artikelsida');
+var product = require('./routes/product');
 var add = require('./routes/add');
 
 /* Small coffee object */
@@ -90,6 +91,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/artikelsida', sida);
+app.use('/product', product);
 app.use('/list', list);
 app.use('/add', add);
 
@@ -111,9 +113,17 @@ app.post('/sent', function(req, res) {
     };
 
     coffee.writeNewEntry(writeNewObject);
-    console.log(writeNewObject);
+//    res.render('');
+//    console.log(writeNewObject);
 });
 
+/*
+app.post('/product', function (req, res) {
+    var id = req.body.id;
+    console.log("Id from get: " + req.body.id);
+    res.render('product', { id: req.body.id });
+});
+*/
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

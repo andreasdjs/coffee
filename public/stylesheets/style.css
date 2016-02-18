@@ -164,3 +164,15 @@ input:focus {
 	position:relative;
 	top:1px;
 }
+
+#product h1 {
+ text-transform: uppercase;
+ margin-bottom:0px;
+}
+
+#product h3 {
+  margin-top: 0px;
+}
+
+
+

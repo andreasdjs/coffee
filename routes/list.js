@@ -56,7 +56,7 @@ function readCoffee(callback) {
 
   fileReadStream.on('end', () => {
       var obj = JSON.parse(data);
-
+/*
       console.log("\nRead JSON file: \n");
 
       obj.coffee.forEach(function(element){
@@ -68,7 +68,7 @@ function readCoffee(callback) {
         console.log("About: " + element.about);
         console.log("\n"); 
       });    
-
+*/
       callback(obj);
 
   });
