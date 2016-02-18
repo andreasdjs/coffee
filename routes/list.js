@@ -5,8 +5,49 @@ var router = express.Router();
 
 var fs = require('fs');
 
+/*
+fs.stat('coffeeWritten.txt', function(err, stat) {
+    if(err == null) {
+        console.log('File exists');
+    } else if(err.code == 'ENOENT') {
+        console.log('File does not exist');    	
+    } else {
+        console.log('Some other error: ', err.code);
+    }
+});
+*/
+/*
+function checkForDataFile(callback) {
+	fs.stat('coffeeWritten.txt', function(err, stat) {
+	    if(err == null) {
+	        console.log('File exists');
+	    } else if(err.code == 'ENOENT') {
+	        console.log('File does not exist');    	
+	    } else {
+	        console.log('Some other error: ', err.code);
+	    }
+	});
+}
+*/
+
 function readCoffee(callback) {
-  var fileReadStream = fs.createReadStream('coffee.json');
+ //
+ /* 
+	fs.stat('coffeeWritten.txt', function(err, stat) {
+	    if(err == null) {
+	        console.log('using coffeWritten.txt');
+			var fileReadStream = fs.createReadStream('coffeeWritten.txt');
+	    } else if(err.code == 'ENOENT') {
+	        console.log('Using coffee.json');
+			var fileReadStream = fs.createReadStream('coffee.json');
+	    } else {
+	        console.log('Some other error: ', err.code);
+	    }
+	});
+*/
+//
+//  var fileReadStream = fs.createReadStream('coffee.json');
+  var fileReadStream = fs.createReadStream('coffeeWritten.txt');
   var data = "";
 
   fileReadStream.on('data', (chunk) => {

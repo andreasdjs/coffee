@@ -4,6 +4,10 @@ function readCurrentJson () {
 	// Remove read from functions below and put it here.
 }
 
+function checkForDataFile() {
+	//
+}
+
 function readCoffee () {
   var fileReadStream = fs.createReadStream('coffee.json');
   var data = "";

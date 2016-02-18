@@ -110,6 +110,7 @@ app.post('/sent', function(req, res) {
           "about": req.body.about
     };
 
+    coffee.writeNewEntry(writeNewObject);
     console.log(writeNewObject);
 });
 
