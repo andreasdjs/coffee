@@ -50,7 +50,7 @@ parameter as input for it).
 */
 
 /* Get max id value */ 
-
+/*
 var newMax = 0;
 function setNewMaxId() {
   coffee.getMaxId(function(i){
@@ -58,9 +58,9 @@ function setNewMaxId() {
     newMax = i + 1;
   });
 }
-
+*/
 /* Another way to get max id value */
-
+/* 
 var newMaxId = 0;
 
 function returnValue(i) {
@@ -70,6 +70,7 @@ function returnValue(i) {
 
 setNewMaxId();
 coffee.getMaxId(returnValue);
+*/
 
 /* End get max id value */ 
 
@@ -97,11 +98,46 @@ app.use('/add', add);
 
 /* Recieve POST data */
 
+/*
+function setNewMaxId() {
+  coffee.getMaxId(function(i){
+    console.log("i from product page: " + i)
+  });
+}
+
+setNewMaxId();
+*/
+
 app.post('/sent', function(req, res) {
     var name = req.body.name;
 //    var newId = coffee.getMaxId();
 // console.log("Returned value: " + coffee.getMaxId());
 //    coffee.getMaxId();
+
+
+function setNewMaxId() {
+  coffee.getMaxId(function(i){
+    console.log("i from post page " + i);
+
+
+    var writeNewObject = {
+        "id": i,
+          "title": req.body.title,
+          "roastery" : req.body.roastery,
+          "country": req.body.country,
+          "producer": req.body.producer,
+          "brewingMethod": req.body.brewingMethod,
+          "about": req.body.about
+    };
+
+    coffee.writeNewEntry(writeNewObject);
+
+
+  });
+}
+
+setNewMaxId();
+/*
     var writeNewObject = {
         "id": "8",
           "title": req.body.title,
@@ -113,6 +149,9 @@ app.post('/sent', function(req, res) {
     };
 
     coffee.writeNewEntry(writeNewObject);
+
+*/
+
 //    res.render('');
 //    console.log(writeNewObject);
 });

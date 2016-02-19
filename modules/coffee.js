@@ -129,7 +129,7 @@ function writeNewEntry(newEntryObject) {
 }
 
 function getMaxId(foo) {
-  var fileReadStream = fs.createReadStream('coffee.json');
+  var fileReadStream = fs.createReadStream('coffeeWritten.txt');
   var data = "";
   var maxId = 0;
 
@@ -140,7 +140,7 @@ function getMaxId(foo) {
   fileReadStream.on('end', () => {
       var obj = JSON.parse(data);
 
-      console.log("\nRetrieving max Id.\n");
+//      console.log("\nRetrieving max Id.\n");
 
       obj.coffee.forEach(function(element){
   		if (parseInt(element.id) >= maxId) {
@@ -148,8 +148,8 @@ function getMaxId(foo) {
   		}
 
       });
-      console.log("New id: " + maxId + "\n"); 
-		foo(maxId);
+//      console.log("New id: " + maxId + "\n"); 
+    	foo(maxId);
   });
 }
 

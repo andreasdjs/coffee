@@ -3,7 +3,6 @@ var router = express.Router();
 
 var fs = require('fs');
 
-
 function readCoffee(callback) {
   var fileReadStream = fs.createReadStream('coffeeWritten.txt');
   var data = "";
@@ -28,8 +27,45 @@ router.get('/', function(req, res, next) {
 //	getItemById(parseInt(req.query.id), pushContent);
 
 	function pushContent(obj){
+		console.log("Query id from product page: " + req.query.id);
+//		console.log(obj.coffee[parseInt(req.query.id)].title);
+//		console.log("after");
+
+/*
+      obj.coffee.forEach(function(element){
+      	if (parseInt(element.id) === req.query.id) {
+        console.log("Id: " + element.id);
+        console.log("Roastery: " + element.roastery);
+        console.log("Title: " + element.title);
+        console.log("Producer: " + element.producer);
+        console.log("Brewing method: " + element.brewingMethod);
+        console.log("About: " + element.about);
+        console.log("\n"); }
+      });    
+
+*/
+
+
+      obj.coffee.forEach(function(element){
+
+      	if (parseInt(element.id) === parseInt(req.query.id)) {
+      		console.log("Hit!");
+
+        console.log("Id: " + element.id);
+        console.log("Roastery: " + element.roastery);
+        console.log("Title: " + element.title);
+        console.log("Producer: " + element.producer);
+        console.log("Brewing method: " + element.brewingMethod);
+        console.log("About: " + element.about);
+        console.log("\n"); 
+
+
+      	}
+
+      });   
+
+
 		res.render('product', {
-//	        	title: 'KAFFESORT',
 	        	id: req.query.id,
 	        	title: obj.coffee[parseInt(req.query.id)].title,
 	        	roastery: obj.coffee[parseInt(req.query.id)].roastery,
