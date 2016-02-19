@@ -53,6 +53,15 @@
 	        "producer": "Santa Teresa",
 	        "brewingMethod": "Aeropress, Brygg, Press",
 	        "about": "Jorge ärvde gården Santa Teresa efter far 2007 och har efter sin utbildning till agronom tagit gården till en av de främsta i landet. På gården finns två naturliga vattenkällor som används till bevattning och tvättning av kaffet efter skörd. Kaffet odlas under optimala förhållanden under skyddande träd som ger skugga åt plantorna och arbetarna på farmen. Efter tvättning på gården processas kaffet hos Beneficio Las Segovias och är därefter redo för export. Jorges kaffe är sött, mycket välbalanserat och har tydlig smak av nötter, nougat, karamell och stenfrukt. Jorge Lagos finns som lätt rostat (i brun påse) och lätt mörkrostat (i svart påse)."
-	    }
+	    },
+		{
+        "id": "7",
+          "title": "Espresso No 2.4",
+          "roastery" : "Slöinge",
+          "country": "80% Brasilien, 20% Honduras",
+          "producer": "Fazenda Sertãozinho, Miguel Moreno",
+          "brewingMethod": "Espresso, kraftig brygg",
+          "about": "Vår traditionella espressoblandning består av ett kaffe från Sertãozinho i Brasilien och ett från Miguel Moreno i Honduras. Den är varsamt rostad för att fortfarande behålla en tydlig karaktär av kaffe. Inga brända smaker och ingen beska. Kaffet från Brasilien står chokladkaraktären och sötman, Miguel Moreno bidrar med en karamellsötma som gifter sig fint med chokladtonen. Mycket lent avslut. Fungerar även mycket bra som vanligt bryggkaffe om man vill ett lite fylligare, mer mörkrostat kaffe."
+    	}
     ]
 }

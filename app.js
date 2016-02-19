@@ -14,21 +14,9 @@ var list = require('./routes/list');
 var product = require('./routes/product');
 var add = require('./routes/add');
 
-/* Small coffee object to be written into the initialized coffee file */
+/* Write initial coffee data file */
 
-var newObject = {
-        "id": "7",
-          "title": "Espresso No.4",
-          "roastery" : "Slöinge",
-          "country": "7",
-          "producer": "7",
-          "brewingMethod": "Espresso, kraftig brygg",
-          "about": "Vår traditionella espressoblandning består av ett kaffe från Sertãozinho i Brasilien och ett från Miguel Moreno i Honduras. Den är varsamt rostad för att fortfarande behålla en tydlig karaktär av kaffe. Inga brända smaker och ingen beska. Kaffet från Brasilien står chokladkaraktären och sötman, Miguel Moreno bidrar med en karamellsötma som gifter sig fint med chokladtonen. Mycket lent avslut. Fungerar även mycket bra som vanligt bryggkaffe om man vill ett lite fylligare, mer mörkrostat kaffe."
-      };
-
-/* Write initial coffee file using the coffee entry above */
-
-coffee.initialWrite(newObject);
+coffee.initialWrite();
 
 var app = express();
 
