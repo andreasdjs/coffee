@@ -51,6 +51,36 @@ router.get('/', function(req, res, next) {
       	if (parseInt(element.id) === parseInt(req.query.id)) {
       		console.log("Hit!");
 
+		res.render('product', {
+	        	id: element.id,
+	        	title: element.title,
+	        	roastery: element.roastery,
+	        	producer: element.producer,	        	
+	        	country: element.country,	        	
+	        	brewingMethod: element.brewingMethod,	        	
+	        	about: element.about
+	     });
+
+
+
+
+
+        console.log("Id: " + element.id);
+        console.log("Roastery: " + element.roastery);
+        console.log("Title: " + element.title);
+        console.log("Producer: " + element.producer);
+        console.log("Brewing method: " + element.brewingMethod);
+        console.log("About: " + element.about);
+        console.log("\n"); 
+
+      		console.log("Hit!");
+			if (typeof element.id === 'string') {
+				console.log("Type is string");
+			}
+
+      	}
+
+
         console.log("Id: " + element.id);
         console.log("Roastery: " + element.roastery);
         console.log("Title: " + element.title);
@@ -60,11 +90,11 @@ router.get('/', function(req, res, next) {
         console.log("\n"); 
 
 
-      	}
+
 
       });   
 
-
+/*
 		res.render('product', {
 	        	id: req.query.id,
 	        	title: obj.coffee[parseInt(req.query.id)].title,
@@ -75,6 +105,9 @@ router.get('/', function(req, res, next) {
 	        	about: obj.coffee[parseInt(req.query.id)].about,
 	        	coffee: obj
 	     });
+
+
+		*/
 	}
 
 });

@@ -119,7 +119,7 @@ function setNewMaxId() {
   coffee.getMaxId(function(i){
     console.log("i from post page " + i);
 
-
+    var iString = toString(i);
     var writeNewObject = {
         "id": i,
           "title": req.body.title,
