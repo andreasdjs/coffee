@@ -179,3 +179,24 @@ p {
 	line-height: 25px; /* Higher line height for readability */
 }
 
+/* Notification shows and then fades out */
+
+#notification {
+    color: #10C010;
+    -webkit-animation: fadeinout 2s linear forwards;
+    animation: fadeinout 2s linear forwards;
+}
+
+@-webkit-keyframes fadeinout {
+  	0% { opacity: 1; }
+	75% { opacity: 1; }
+	100% { opacity: 0; }
+}
+
+@keyframes fadeinout {
+  	0% { opacity: 1; }
+	75% { opacity: 1; }
+	100% { opacity: 0; }
+}
+
+
