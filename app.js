@@ -11,7 +11,6 @@ var coffee = require('./modules/coffee');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var list = require('./routes/list');
-var sida = require('./routes/artikelsida');
 var product = require('./routes/product');
 var add = require('./routes/add');
 
@@ -48,7 +47,6 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/artikelsida', sida);
 app.use('/product', product);
 app.use('/list', list);
 app.use('/add', add);
@@ -76,6 +74,9 @@ app.post('/sent', function(req, res) {
     });
   }
   setNewMaxId();
+  res.render('add', {
+    written: 'Nytt kaffe tillagt'
+  });
 });
 
 // catch 404 and forward to error handler

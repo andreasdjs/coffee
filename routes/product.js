@@ -24,27 +24,9 @@ router.get('/', function(req, res, next) {
 	console.log("Query id: " + req.query.id);
 
 	readCoffee(pushContent);
-//	getItemById(parseInt(req.query.id), pushContent);
 
 	function pushContent(obj){
 		console.log("Query id from product page: " + req.query.id);
-//		console.log(obj.coffee[parseInt(req.query.id)].title);
-//		console.log("after");
-
-/*
-      obj.coffee.forEach(function(element){
-      	if (parseInt(element.id) === req.query.id) {
-        console.log("Id: " + element.id);
-        console.log("Roastery: " + element.roastery);
-        console.log("Title: " + element.title);
-        console.log("Producer: " + element.producer);
-        console.log("Brewing method: " + element.brewingMethod);
-        console.log("About: " + element.about);
-        console.log("\n"); }
-      });    
-
-*/
-
 
       obj.coffee.forEach(function(element){
 
@@ -61,10 +43,6 @@ router.get('/', function(req, res, next) {
 	        	about: element.about
 	     });
 
-
-
-
-
         console.log("Id: " + element.id);
         console.log("Roastery: " + element.roastery);
         console.log("Title: " + element.title);
@@ -80,7 +58,6 @@ router.get('/', function(req, res, next) {
 
       	}
 
-
         console.log("Id: " + element.id);
         console.log("Roastery: " + element.roastery);
         console.log("Title: " + element.title);
@@ -89,48 +66,9 @@ router.get('/', function(req, res, next) {
         console.log("About: " + element.about);
         console.log("\n"); 
 
-
-
-
       });   
-
-/*
-		res.render('product', {
-	        	id: req.query.id,
-	        	title: obj.coffee[parseInt(req.query.id)].title,
-	        	roastery: obj.coffee[parseInt(req.query.id)].roastery,
-	        	producer: obj.coffee[parseInt(req.query.id)].producer,	        	
-	        	country: obj.coffee[parseInt(req.query.id)].country,	        	
-	        	brewingMethod: obj.coffee[parseInt(req.query.id)].brewingMethod,	        	
-	        	about: obj.coffee[parseInt(req.query.id)].about,
-	        	coffee: obj
-	     });
-
-
-		*/
 	}
 
 });
-/* 
-"id": "3",
-	        "title": "Yandaro",
-	        "roastery" : "Slöinge",
-	        "country": "Burundi",
-	        "producer": "Yandaro",
-	        "brewingMethod": "Press",
-	        "about": "I norra delen av Burundi på gränsen till Rwanda, i regionen Kayanza,
-
-*/
-/*
-
-	readCoffee(pushContent);
-
-    function pushContent(obj){
-    	res.render('list', {
-        	title: 'KAFFESORTER',
-        	coffee: obj
-      });
-   }
-   */
 
 module.exports = router;
