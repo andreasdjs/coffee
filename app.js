@@ -4,8 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-// var fs = require('fs');
 
+// Include coffee module
 var coffee = require('./modules/coffee');
 
 var routes = require('./routes/index');
@@ -15,7 +15,7 @@ var sida = require('./routes/artikelsida');
 var product = require('./routes/product');
 var add = require('./routes/add');
 
-/* Small coffee object */
+/* Small coffee object to be written into the initialized coffee file */
 
 var newObject = {
         "id": "7",
@@ -27,52 +27,9 @@ var newObject = {
           "about": "Vår traditionella espressoblandning består av ett kaffe från Sertãozinho i Brasilien och ett från Miguel Moreno i Honduras. Den är varsamt rostad för att fortfarande behålla en tydlig karaktär av kaffe. Inga brända smaker och ingen beska. Kaffet från Brasilien står chokladkaraktären och sötman, Miguel Moreno bidrar med en karamellsötma som gifter sig fint med chokladtonen. Mycket lent avslut. Fungerar även mycket bra som vanligt bryggkaffe om man vill ett lite fylligare, mer mörkrostat kaffe."
       };
 
-/* Call function to write coffe object */
+/* Write initial coffee file using the coffee entry above */
 
 coffee.initialWrite(newObject);
-
-/* Passing function as a parameter example */ 
-/*
-function foodemo(value){
-  return 'hello '+ value;
-}
-
-function funct(a, foo) {
-  console.log("\n foo: " + foo(a) + "\n");
-}
-
-funct('world!', foodemo); //=> 'hello world!'
-*/
-/*
-So, the second parameter of funct is a reference to another function (in this case foodemo).
-Once the function is called, it executes that other function (in this case using the first
-parameter as input for it).
-*/
-
-/* Get max id value */ 
-/*
-var newMax = 0;
-function setNewMaxId() {
-  coffee.getMaxId(function(i){
-    console.log("i2: " + i)
-    newMax = i + 1;
-  });
-}
-*/
-/* Another way to get max id value */
-/* 
-var newMaxId = 0;
-
-function returnValue(i) {
-  console.log("i: " + i);
-  newMaxId = i + 1;
-}
-
-setNewMaxId();
-coffee.getMaxId(returnValue);
-*/
-
-/* End get max id value */ 
 
 var app = express();
 
@@ -98,71 +55,28 @@ app.use('/add', add);
 
 /* Recieve POST data */
 
-/*
-function setNewMaxId() {
-  coffee.getMaxId(function(i){
-    console.log("i from product page: " + i)
-  });
-}
-
-setNewMaxId();
-*/
-
 app.post('/sent', function(req, res) {
     var name = req.body.name;
-//    var newId = coffee.getMaxId();
-// console.log("Returned value: " + coffee.getMaxId());
-//    coffee.getMaxId();
 
+  function setNewMaxId() {
+    coffee.getMaxId(function(i){
+      console.log("i from post page " + i);
 
-function setNewMaxId() {
-  coffee.getMaxId(function(i){
-    console.log("i from post page " + i);
-
-    var iString = toString(i);
-    var writeNewObject = {
-        "id": i,
-          "title": req.body.title,
-          "roastery" : req.body.roastery,
-          "country": req.body.country,
-          "producer": req.body.producer,
-          "brewingMethod": req.body.brewingMethod,
-          "about": req.body.about
-    };
-
-    coffee.writeNewEntry(writeNewObject);
-
-
-  });
-}
-
-setNewMaxId();
-/*
-    var writeNewObject = {
-        "id": "8",
-          "title": req.body.title,
-          "roastery" : req.body.roastery,
-          "country": req.body.country,
-          "producer": req.body.producer,
-          "brewingMethod": req.body.brewingMethod,
-          "about": req.body.about
-    };
-
-    coffee.writeNewEntry(writeNewObject);
-
-*/
-
-//    res.render('');
-//    console.log(writeNewObject);
+      var iString = toString(i);
+      var writeNewObject = {
+          "id": i,
+            "title": req.body.title,
+            "roastery" : req.body.roastery,
+            "country": req.body.country,
+            "producer": req.body.producer,
+            "brewingMethod": req.body.brewingMethod,
+            "about": req.body.about
+      };
+      coffee.writeNewEntry(writeNewObject);
+    });
+  }
+  setNewMaxId();
 });
-
-/*
-app.post('/product', function (req, res) {
-    var id = req.body.id;
-    console.log("Id from get: " + req.body.id);
-    res.render('product', { id: req.body.id });
-});
-*/
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
