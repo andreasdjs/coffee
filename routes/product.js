@@ -10,6 +10,12 @@ router.get('/', function(req, res, next) {
 
 	coffee.readCoffee(pushContent);
 
+/* 
+	Getting the data object from readCoffee function and 
+  	check for the element with an id that equals the
+	request query id.  
+*/
+
 	function pushContent(obj){
 		console.log("Query id from product page: " + req.query.id);
 

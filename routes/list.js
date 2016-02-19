@@ -6,7 +6,11 @@ var coffee = require('../modules/coffee');
 
 router.get('/', function(req, res, next) {
 
-	// Call coffe.readCoffee and get coffee object with pushContent
+/* 
+	Getting the data object from readCoffee function and 
+  	passing the object to the JADE template.
+*/
+
 	coffee.readCoffee(pushContent);
 
     function pushContent(obj){
