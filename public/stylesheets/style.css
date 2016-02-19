@@ -15,7 +15,7 @@ body {
 #container {
 	margin-left:32px;
 	margin-top:16px;
-	width: 550px; /* Limiting words per line for readability */
+	width: 510px; /* Limiting words per line for readability */
 }
 
 ul, li { padding: 0px; margin: 0px;}
